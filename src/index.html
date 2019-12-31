@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>preact-starter</title>
+  <meta name="description" content="Starter project with preact, typescript, scss, eslint, webpack, jest, milligram">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff"/>
+  <link rel="apple-touch-icon" href="icon-512.png">
+</head>
+<body>
+  <noscript>Please turn on the Javascript.</noscript>
+  <div id="app"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(function() { console.log("Service worker registered"); });
+    }
+  </script>
+</body>
+</html>

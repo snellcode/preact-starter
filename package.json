@@ -1,0 +1,46 @@
+{
+	"name": "preact-starter",
+	"version": "1.0.0",
+	"description": "Starter project with preact, typescript, webpack, hmr, eslint, jest, pwa, milligram",
+	"scripts": {
+		"build:dev": "NODE_ENV=development webpack --config webpack.dev.js",
+		"build:prod": "NODE_ENV=production webpack --config webpack.prod.js",
+		"watch": "NODE_ENV=development webpack --config webpack.dev.js --watch",
+		"test": "jest --passWithNoTests",
+		"serve": "NODE_ENV=development webpack-dev-server --config webpack.dev.js -d --history-api-fallback --hot --inline --host $1",
+		"lint": "DEBUG=eslint:linter eslint --fix src/*.tsx src/**/*.tsx"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"milligram": "^1.3.0",
+		"preact": "^10.1.1"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^2.13.0",
+		"@typescript-eslint/parser": "^2.13.0",
+		"clean-webpack-plugin": "^3.0.0",
+		"copy-webpack-plugin": "^5.1.1",
+		"css-loader": "^3.4.0",
+		"eslint": "^6.8.0",
+		"eslint-config-standard": "^14.1.0",
+		"eslint-loader": "^3.0.3",
+		"eslint-plugin-import": "^2.19.1",
+		"eslint-plugin-node": "^11.0.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-react": "^7.17.0",
+		"eslint-plugin-standard": "^4.0.1",
+		"html-webpack-plugin": "^3.2.0",
+		"jest": "^24.9.0",
+		"mini-css-extract-plugin": "^0.9.0",
+		"node-sass": "^4.13.0",
+		"sass-loader": "^8.0.0",
+		"style-loader": "^1.1.2",
+		"terser-webpack-plugin": "^2.3.1",
+		"ts-loader": "^6.2.1",
+		"typescript": "^3.7.4",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.3.10",
+		"webpack-dev-server": "^3.10.1",
+		"webpack-merge": "^4.2.2"
+	}
+}
