@@ -1,21 +1,23 @@
 import { Component, h } from 'preact'
 import { Clock } from '@src/components/Clock'
-interface Props {}
-interface State {
-  date: number
-}
-export class App extends Component<Props, State> {
-  constructor (props: Props) {
+import { store } from '@src/store'
+
+export class App extends Component {
+  constructor (props) {
     super(props)
-    this.setState({ date: Date.now() })
+    store.paths({
+      date: 'clock.date',
+      format: 'clock.format'
+    }).link(this)
     setInterval(() => {
-      this.setState({ date: Date.now() })
+      store.set('clock.date', Date.now())
     }, 1000)
   }
 
-  render (props: Props, state: State) {
+  render () {
+    const { date, format } = this.state.store
     return (
-      <Clock date={state.date} />
+      <Clock format={date} date={format} />
     )
   }
 }

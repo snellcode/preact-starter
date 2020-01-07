@@ -1,5 +1,5 @@
 # preact-starter
-Starter project with preact, typescript, webpack, hmr, eslint, jest, pwa, milligram.
+Starter project with preact, jsx, typescript, ClearX, webpack, hmr, eslint, jest, pwa, milligram.
 
 You should get all 100 lighthouse score, although this depends on some of your server settings.
 

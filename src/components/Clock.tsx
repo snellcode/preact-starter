@@ -1,23 +1,18 @@
 import { Component, h } from 'preact'
+import { store } from '@src/store'
+
 interface Props {
-  date: number
+  date: number,
+  format: string
 }
 export class Clock extends Component<Props> {
-  constructor (props) {
-    super(props)
-    this.state = {
-      method: 'toUTCString'
-    }
-  }
-
   getDate (timestamp: number) {
-    return new Date(timestamp)[this.state.method]()
+    return new Date(timestamp)[this.props.format]()
   }
 
   onClick (e: Event) {
     e.preventDefault()
-    const method = this.state.method === 'toUTCString' ? 'toString' : 'toUTCString'
-    this.setState({ method })
+    store.set('clock.format', this.props.format === 'toUTCString' ? 'toString' : 'toUTCString')
   }
 
   render (props: Props) {
@@ -25,7 +20,7 @@ export class Clock extends Component<Props> {
       <div>
         <div>Clock</div>
         <div>{this.getDate(props.date)}</div>
-        <button onClick={this.onClick.bind(this)}>formater: {this.state.method}</button>
+        <button onClick={this.onClick.bind(this)}>format: {props.format}</button>
       </div>
     )
   }

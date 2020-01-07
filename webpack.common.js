@@ -11,7 +11,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
-      favicon: 'src/favicon.ico',
+      favicon: 'src/favicon.ico'
     }),
     new CopyWebpackPlugin([
       'src/manifest.json',
@@ -21,19 +21,19 @@ module.exports = {
   ],
   entry: './src/index.tsx',
   output: {
-    path: path.resolve('./dist'),
+    path: path.resolve('./dist')
   },
   resolve: {
     extensions: ['.ts', '.js', '.tsx', '.json'],
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     alias: {
-      "@src": path.resolve(__dirname, 'src/')
+      '@src': path.resolve(__dirname, 'src/')
     }
   },
   module: {
     rules: [
       {
-        test: /\.ts(x?)$/,
+        test: /\.ts(x?)|js(x?)$/,
         enforce: 'pre',
         loader: 'eslint-loader',
         exclude: /node_modules/,
@@ -44,14 +44,14 @@ module.exports = {
         }
       },
       {
-        test: /\.ts(x?)$/,
+        test: /\.ts(x?)|js(x?)$/,
         exclude: /node_modules/,
         use: [{
           loader: 'ts-loader',
           options: {
-            transpileOnly: true,
-          },
-        }],
+            transpileOnly: true
+          }
+        }]
       },
       {
         test: /\.(s?)css$/i,
@@ -59,14 +59,14 @@ module.exports = {
           styleLoader,
           {
             loader: 'css-loader',
-            options: { sourceMap: true },
+            options: { sourceMap: true }
           },
           {
             loader: 'sass-loader',
-            options: { sourceMap: true },
-          },
-        ],
-      },
+            options: { sourceMap: true }
+          }
+        ]
+      }
     ]
   }
 }
