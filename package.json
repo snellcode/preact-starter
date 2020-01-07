@@ -1,7 +1,7 @@
 {
-	"name": "preact-starter",
+	"name": "@snellcode/preact-starter",
 	"version": "1.0.0",
-	"description": "Starter project with preact, typescript, webpack, hmr, eslint, jest, pwa, milligram",
+	"description": "Starter project with preact, jsx, typescript, webpack, hmr, eslint, jest, pwa, milligram",
 	"scripts": {
 		"build:dev": "NODE_ENV=development webpack --config webpack.dev.js",
 		"build:prod": "NODE_ENV=production webpack --config webpack.prod.js",
@@ -12,12 +12,13 @@
 	},
 	"license": "MIT",
 	"dependencies": {
+		"clearx": "^2.0.8",
 		"milligram": "^1.3.0",
 		"preact": "^10.1.1"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^2.13.0",
-		"@typescript-eslint/parser": "^2.13.0",
+		"@typescript-eslint/eslint-plugin": "^2.15.0",
+		"@typescript-eslint/parser": "^2.15.0",
 		"clean-webpack-plugin": "^3.0.0",
 		"copy-webpack-plugin": "^5.1.1",
 		"css-loader": "^3.4.0",

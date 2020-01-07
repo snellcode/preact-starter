@@ -26,6 +26,9 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js', '.tsx', '.json'],
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    alias: {
+      "@src": path.resolve(__dirname, 'src/')
+    }
   },
   module: {
     rules: [
@@ -37,7 +40,7 @@ module.exports = {
         options: {
           fix: true,
           emitWarning: true,
-          configFile: './.eslintrc.json'
+          configFile: './.eslintrc.js'
         }
       },
       {

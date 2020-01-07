@@ -1,21 +1,24 @@
 {
 	"compilerOptions": {
-		"outDir": "./dist",
-		"target": "es5",
-		"moduleResolution": "node",
-		"module": "commonjs",
-		"noImplicitAny": false,
-		"removeComments": true,
-		"sourceMap": true,
+    "outDir": "./dist",
+    "target": "es5",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "removeComments": true,
+    "sourceMap": true,
 		"jsx": "react",
-		"jsxFactory": "h"
-	},
-	"suppressImplicitAnyIndexErrors": true,
+    "jsxFactory": "h",
+    "baseUrl": "./src",
+    "paths": {
+      "@src/*": [
+        "./*"
+      ]
+    }
+  },
 	"lib": [
 		"dom",
 		"es2017"
 	],
-	"baseUrl": ".",
 	"exclude": [
 		"dist"
 	]
