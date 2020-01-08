@@ -4,11 +4,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const styleLoader = process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader'
+
 module.exports = {
   mode: 'development',
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       favicon: 'src/favicon.ico'
@@ -21,7 +24,8 @@ module.exports = {
   ],
   entry: './src/index.tsx',
   output: {
-    path: path.resolve('./dist')
+    path: path.resolve('./dist'),
+    filename: '[name].[hash].js'
   },
   resolve: {
     extensions: ['.ts', '.js', '.tsx', '.json'],
