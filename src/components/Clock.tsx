@@ -10,16 +10,19 @@ interface Props {
 const getDate = (props: Props) => {
   return new Date(props.date)[props.format]()
 }
-const onClick = (props: Props) => (e: Event) => {
-  e.preventDefault()
-  store.set('clock.format', props.format === 'toUTCString' ? 'toString' : 'toUTCString')
+
+// notice that e.target is setup to pass props
+// avoiding the need to create an arrow function in render (perf issue)
+const onClick = (e: Event) => {
+  const format = (e.target as HTMLElement).getAttribute('format')
+  store.set('clock.format', format === 'toUTCString' ? 'toString' : 'toUTCString')
 }
 export const Clock = (props: Props) => {
   return (
     <div>
       <div>Clock</div>
       <div>{getDate(props)}</div>
-      <button onClick={onClick(props)}>format: {props.format}</button>
+      <button {...props} onClick={onClick}>format: {props.format}</button>
     </div>
   )
 }

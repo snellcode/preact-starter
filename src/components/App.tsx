@@ -9,8 +9,8 @@ setInterval(() => {
 
 // this component holds state, allowing store.paths to be defined
 export class App extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     store.paths({ clock: 'clock' }).link(this)
   }
 
