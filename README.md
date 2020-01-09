@@ -19,10 +19,10 @@ Prod build:
 Dev Server:
 `yarn serve` or `yarn serve example.com` if you need non localhost hostname
 
-Lint (is setup to auto fix, remove the 'fix' option if you prefer)
+Lint
 `yarn lint`
 
-Test (none yet, I will add one sample soon)
+Test
 `yarn test`
 
 Watch mode (useful for integration into traditional non SPA pages)
